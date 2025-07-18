@@ -1,0 +1,20 @@
+Address Map for AXI Slave Interface: global_var
+
++--------------+-----------+-------------------+----------+
+| Word Address | Bit Range | Variables         | Removed? |
++--------------+-----------+-------------------+----------+
+| 0            |  15 :  0  | memory.array[0]   |          |
+|              |  31 : 16  | memory.array[1]   |          |
+|              |  47 : 32  | memory.array[2]   |          |
+|              |  63 : 48  | memory.array[3]   |          |
+| 1            |  15 :  0  | memory.array[4]   |          |
+|              |  31 : 16  | memory.array[5]   |          |
+|              |  47 : 32  | memory.array[6]   |          |
+|              |  63 : 48  | memory.array[7]   |          |
+| 2            |  31 :  0  | memory.a          |          |
+|              |  63 : 32  | memory.b          |          |
+| 3            |  63 :  0  | memory.sum_result |          |
+| 4            |  31 :  0  | memory.xor_result |          |
+|              |  63 : 32  | memory.or_result  |          |
+| 5            |   0 :  0  | slave_memory_ctrl |          |
++--------------+-----------+-------------------+----------+

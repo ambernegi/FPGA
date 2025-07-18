@@ -1,0 +1,161 @@
+----------------------------------------------------------------------------
+Smart High-Level Synthesis Tool Version 2022.1.1
+Copyright (c) 2015-2022 Microchip Technology Inc. All Rights Reserved.
+For support, please visit https://microchiptech.github.io/fpga-hls-docs/techsupport.html.
+Date: Thu Jun 16 17:12:41 2022
+----------------------------------------------------------------------------
+Info: Checking for SmartHLS feature license.
+Info: SmartHLS feature license was successfully checked out.
+Info: Adding no_inline attribute to the user-specified function: top
+Info: Partitioning memory: array into 1000 partitions.
+Info: Running Allocation.
+Info: Target FPGA: MICROSEMI PolarFire.
+Info: Project type: hw_only
+Info: Clock period constraint: 10.00 ns (100.00 MHz).
+Info: Allocating memories.
+Info: Running Scheduling for function: insert_top().
+Info: Running Scheduling for function: top().
+Info: Done Scheduling.
+Info: Generating RTL for function: insert_top().
+Info: Generating module declaration.
+Info: Generating module signals.
+Info: Running Binding for function: insert_top().
+Info: Generating module datapath.
+Info: Generating RTL for function: top().
+Info: Generating module declaration.
+Info: Generating module signals.
+Info: Running Binding for function: top().
+Info: Generating module datapath.
+Info: Generating interconnect for top-level module.
+Info: Printing VHDL wrapper to file: hls_output/rtl/memory_part_access.vhd
+Info: Printing legup type VHDL packages to file: hls_output/rtl/smarthls_types_pkg.vhd
+Info: Outputting VHDL wrapper for top-level module: top_top.
+Info: Printing RTL to file.
+Info: Outputting top-level module: top_top.
+Info: Outputting module: hls_register.
+Info: Outputting module: insert_top.
+Info: Outputting module: top.
+Info: Exporting IP modules.
+Info: Generating HDL+ Tcl script to be imported in SmartDesign: /home/adhamragab/legup/examples/user_guide_examples/memory_partitioning/memory_part_access/hls_output/scripts/create_hdl_plus.tcl.
+Info: Verilog output file: hls_output/rtl/memory_part_access.v.
+Info: SmartHLS summary report: hls_output/reports/summary.hls.top.rpt.
+Info: Generating Co-simulation Software Wrapper
+Compiling Software...
+Info: Generating Co-simulation RTL testbench
+Info: Running RTL simulation
+Reading pref.tcl
+
+# 2020.4
+
+# vmap -c
+# Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+# vmap -c 
+# Copying /home/davidma/modelSim_SE_2020.4/modeltech/linux_x86_64/../modelsim.ini to modelsim.ini
+#  vlib work
+#  vmap work ./work
+# Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+# vmap work ./work 
+# Modifying modelsim.ini
+#  exit
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 17:16:48 on Jun 16,2022
+vlog -sv "+define+MEM_INIT_DIR="../rtl/mem_init/"" ../../hls_output/rtl/memory_part_access.v cosim_tb.sv 
+-- Compiling module memory_part_access_hls_register
+-- Compiling module top_top
+-- Compiling module insert_top
+-- Compiling module top
+-- Compiling module top_top_tb
+-- Compiling module cosim_tb
+
+Top level modules:
+	cosim_tb
+End time: 17:16:49 on Jun 16,2022, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 2020.4
+
+# source sim_library.tcl
+# Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+# vmap polarfire_Libero12.6_ModelSimSE2020.4 /home/adhamragab/legup/ip/libs/microsemi/sim/polarfire_Libero12.6_ModelSimSE2020.4 
+# Modifying modelsim.ini
+#  exit
+Reading pref.tcl
+
+# 2020.4
+
+# vsim -suppress 8607 -suppress 2249 -suppress 2685 -suppress 2718 -suppress 3017 -suppress 3722 -suppress 12110 -suppress 8891 "+nowarn8891" -c -do "set StdArithNoWarnings 1; run 1000000000000000ns; exit;" work.cosim_tb -L polarfire 
+# Start time: 17:16:51 on Jun 16,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# //  ModelSim SE-64 2020.4 Oct 13 2020 Linux 4.15.0-169-generic
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.cosim_tb(fast)
+# set StdArithNoWarnings 1
+# 1
+#  run 1000000000000000ns
+# Running SW/HW co-simulation...
+#           1 /           1 function calls completed.
+# Storing return value return_val at cycle =          15
+# Number of calls:           1
+# Cycle latency:          16
+# ** Note: $finish    : cosim_tb.sv(181)
+#    Time: 350 ns  Iteration: 1  Instance: /cosim_tb
+# End time: 17:16:55 on Jun 16,2022, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
+Info: Verifying RTL simulation
+Number of calls: 1
+Cycle latency: 16
+SW/HW co-simulation: PASS
+Commit,Test Name,CoSim calls,CoSim latency,CoSim result
+100f6d957,user_guide_examples/memory_partitioning/memory_part_access,1,16,PASS
+279e4de5a,user_guide_examples/memory_partitioning/memory_part_access,1,16,PASS
+$VAR1 = {
+          '279e4de5a,user_guide_examples/memory_partitioning/memory_part_access' => {
+                                                                                      'Test Name' => 'user_guide_examples/memory_partitioning/memory_part_access',
+                                                                                      'CoSim result' => 'PASS',
+                                                                                      'Commit' => '279e4de5a',
+                                                                                      'CoSim latency' => '16',
+                                                                                      'CoSim calls' => '1'
+                                                                                    },
+          '100f6d957,user_guide_examples/memory_partitioning/memory_part_access' => {
+                                                                                      'Test Name' => 'user_guide_examples/memory_partitioning/memory_part_access',
+                                                                                      'CoSim result' => 'PASS',
+                                                                                      'Commit' => '100f6d957',
+                                                                                      'CoSim latency' => '16',
+                                                                                      'CoSim calls' => '1'
+                                                                                    }
+        };
+Column 'CoSim calls' alreadys exists for [279e4de5a,user_guide_examples/memory_partitioning/memory_part_access] at /home/adhamragab/legup/examples/scripts/report_parsing/update_qor_results.pl line 126.
+Column 'CoSim latency' alreadys exists for [279e4de5a,user_guide_examples/memory_partitioning/memory_part_access] at /home/adhamragab/legup/examples/scripts/report_parsing/update_qor_results.pl line 126.
+Column 'CoSim result' alreadys exists for [279e4de5a,user_guide_examples/memory_partitioning/memory_part_access] at /home/adhamragab/legup/examples/scripts/report_parsing/update_qor_results.pl line 126.
+Commit,Test Name,CoSim calls,CoSim latency,CoSim result
+100f6d957,user_guide_examples/memory_partitioning/memory_part_access,1,16,PASS
+279e4de5a,user_guide_examples/memory_partitioning/memory_part_access,1,16,PASS
+$VAR1 = {
+          '279e4de5a,user_guide_examples/memory_partitioning/memory_part_access' => {
+                                                                                      'CoSim calls' => '1',
+                                                                                      'CoSim latency' => '16',
+                                                                                      'Commit' => '279e4de5a',
+                                                                                      'CoSim result' => 'PASS',
+                                                                                      'Test Name' => 'user_guide_examples/memory_partitioning/memory_part_access'
+                                                                                    },
+          '100f6d957,user_guide_examples/memory_partitioning/memory_part_access' => {
+                                                                                      'Test Name' => 'user_guide_examples/memory_partitioning/memory_part_access',
+                                                                                      'CoSim result' => 'PASS',
+                                                                                      'CoSim latency' => '16',
+                                                                                      'Commit' => '100f6d957',
+                                                                                      'CoSim calls' => '1'
+                                                                                    }
+        };

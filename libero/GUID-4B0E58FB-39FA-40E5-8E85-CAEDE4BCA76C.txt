@@ -1,0 +1,78 @@
+LOCAL_CONFIG += -legup-config=custom_config.tcl
+
+######################################################################
+######################################################################
+##
+##   USER GUIDE REFERENCES THIS FILE, STARTING FROM THE LINE AFTER THIS COMMENT.
+##
+######################################################################
+######################################################################
+
+# Path to place files on the Icicle kit, relative to root home dir.
+BOARD_PATH=tests/lane-detection-shls
+
+# To pass timing for this project, we require more PnR passes
+NUM_LIBERO_PnR_PASSES = 10
+
+# Extra defines to include shared opencv/ffmpeg libraries below:
+OPENCV_PATH_RISCV = $(SHLS_ROOT_DIR)/smarthls-library/external/vision/precompiled_sw_libraries/opencv4.5.4-riscv_64
+FFMPEG_PATH_RISCV = $(SHLS_ROOT_DIR)/smarthls-library/external/vision/precompiled_sw_libraries/ffmpeg4.4-riscv_64
+OPENCV_PATH = $(SHLS_ROOT_DIR)/smarthls-library/external/vision/precompiled_sw_libraries/opencv4.5.4-x86_64
+FFMPEG_PATH = $(SHLS_ROOT_DIR)/smarthls-library/external/vision/precompiled_sw_libraries/ffmpeg4.4-x86_64
+
+###########################################################################################
+# User Define variables
+
+# Specify input and optput files to copy to and from the board.
+# INPUT_FILES_RISCV should use host paths.
+# OUTPUT_FILES should use on-board paths.
+INPUT_FILES_RISCV = lane3.avi lane3_golden.txt
+OUTPUT_FILES_RISCV = outputlane3.avi lane3_lane_distances.txt
+
+# Secify input arguments
+PROGRAM_ARGUMENTS = lane3.avi lane3_golden.txt
+
+# Additional flags used for compilation, such as -I
+USER_CXX_FLAG += -I$(OPENCV_PATH)/include/opencv4 -fexceptions \
+                 -Wno-sign-compare -Wno-unused-function        \
+                 -Wno-unused-variable
+
+# Flags for additional link libraries such as -L and -l
+# This variable is for running on local host machine (i.e., x86 target).
+# -B/usr/lib/x86_64-linux-gnu specifies which library to reference
+# when your platform has cross platform compilation capability
+# Specify opencv and ffmpeg libs.
+USER_LINK_FLAG += -B/usr/lib/x86_64-linux-gnu \
+                  -L$(OPENCV_PATH)/lib \
+                  -lopencv_videoio -lopencv_core -lopencv_imgcodecs -lopencv_imgproc \
+                  -L$(FFMPEG_PATH)/lib \
+                  -lavcodec -lavformat -lavutil -lswscale -lswresample \
+                  -Wl,-rpath,$(FFMPEG_PATH)/lib
+
+# Flags for additional link libraries such as -L and -l for
+# This variable is for running on the SOC.
+# Include opencv and ffmpeg libs in the cross compiler linker.
+USER_LINK_FLAG_RISCV = -L$(OPENCV_PATH_RISCV)/lib \
+                       -lopencv_videoio -lopencv_core -lopencv_imgcodecs -lopencv_imgproc -latomic \
+                       -L$(FFMPEG_PATH_RISCV)/lib \
+                       -lavcodec -lavformat -lavutil -lswscale -lswresample \
+                       -Wl,-rpath-link,$(FFMPEG_PATH_RISCV)/lib
+
+# Additional user-defined environment variables that user might need to run their program
+
+# This variable is for running on local host machine
+# Windows needs libraries on PATH
+USER_ENV_VARS = PATH=$(OPENCV_PATH)/lib$(HLS_PATH_SEP)$(FFMPEG_PATH)/bin$(HLS_PATH_SEP)/usr/x86_64-w64-mingw32/sys-root/mingw/bin$(HLS_PATH_SEP)$$PATH
+# Linux needs libraries on LD_LIBRARY_PATH
+USER_ENV_VARS += LD_LIBRARY_PATH=$(OPENCV_PATH)/lib$(HLS_PATH_SEP)$(FFMPEG_PATH)/lib
+
+# Additional user-defined environment variables that user might need to run their program
+# This variable is for running on the SOC
+# LD_LIBRARY_PATH is needed for dynamically linking OpenCV
+USER_ENV_VARS_RISCV = LD_LIBRARY_PATH=/home/root/shls_sw_dependencies/opencv4.5.4-riscv_64/lib:/home/root/shls_sw_dependencies/ffmpeg4.4-riscv_64/lib
+
+# The IP adddress of the ethernet-cable-connected Icicle kit.
+BOARD_IP ?= 192.168.X.X
+
+# The programmer ID for programming the Icicle kit.
+PROGRAMMER_ID ?= 445F3438
