@@ -13,6 +13,12 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
 nav:
   - "What's New":
       - "What's New in Libero SoC Design Suite v2025.1": GUID-46C62B2B-C0F5-4745-A239-30359ACE975F.md
