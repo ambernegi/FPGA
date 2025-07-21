@@ -20,6 +20,8 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
 nav:
+  - Home: index.md
+  - Libero Documentation: libero/index.md
   - "What's New":
       - "What's New in Libero SoC Design Suite v2025.1": GUID-46C62B2B-C0F5-4745-A239-30359ACE975F.md
       - "What's New In MSS Configurator v2025.1": GUID-37D400C8-B80E-4F4F-94DF-EB00158F0D04.md
