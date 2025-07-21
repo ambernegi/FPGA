@@ -2,24 +2,44 @@ site_name: Libero SoC Design Suite Unified Help
 docs_dir: docs
 theme:
   name: material
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.top
   palette:
     - scheme: default
-      primary: blue
-      accent: blue
+      primary: black
+      accent: grey
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
-      primary: blue
-      accent: blue
+      primary: grey
+      accent: white
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-# Remove the entire nav section to allow automatic navigation from index.md
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.expand
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - content.tabs.link
+    - header.autohide
+    - announce.dismiss
+extra:
+  announcement:
+    type: info
+    text: "Welcome to the Libero Documentation Portal."
+  footer:
+    copyright: "© 2024 Libero Documentation Portal. All rights reserved."
+  extra_css:
+    - assets/custom-tiles.css
+plugins:
+  - search
 markdown_extensions:
   - admonition
   - pymdownx.details
