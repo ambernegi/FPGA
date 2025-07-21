@@ -41,3 +41,9 @@ nav:
       - "Getting Started": Chunk1390323175.md
       - "Technical Support": Chunk1803945671.md
       - "Quick Start Tutorial": Chunk921617846.md 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html 
