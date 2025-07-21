@@ -1,9 +1,0 @@
-#include <stdio.h>
-#include <assert.h>
-
-int main() {
-#pragma HLS function top
-    int a = 7, b = 5;
-    assert(a < b);
-    return 0;
-}
