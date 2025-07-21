@@ -19,28 +19,7 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-nav:
-  - Home: index.md
-  - Libero Documentation: libero/index.md
-  - "What's New":
-      - "What's New in Libero SoC Design Suite v2025.1": GUID-46C62B2B-C0F5-4745-A239-30359ACE975F.md
-      - "What's New In MSS Configurator v2025.1": GUID-37D400C8-B80E-4F4F-94DF-EB00158F0D04.md
-      - "What’s New in SmartHLS 2025.1": GUID-91BB4CCA-1260-41BD-B0BB-D4737AF9706A.md
-  - "Download Help":
-      - "Latest Release": Chunk1455086852.md
-      - "Previous Releases (PDF Version)":
-          - "PDF Document Catalog v2024.2": GUID-0CD10D9B-464D-40C4-BD83-5657EE7BBC2C.md
-          - "PDF Document Catalog v2024.1": GUID-731C68FA-2264-4281-82A4-0961B0542894.md
-          - "PDF Document Catalog v2023.2": GUID-FEFC609E-5778-4832-8E3B-DD128DE98D05.md
-          - "PDF Document Catalog v2023.1": GUID-FD3461C7-5549-4758-9D59-1E754C26D8B9.md
-          - "PDF Document Catalog v2022.3": GUID-4FB8ACB7-7687-44C5-A213-FE2450D8673D.md
-          - "PDF Document Catalog v2022.2": GUID-78201BD2-3DDD-4D75-97C1-D14234BD0DE0.md
-          - "PDF Document Catalog v2022.1": GUID-066BC141-8000-4447-8E00-C0708EAFDD53.md
-  - "SmartHLS Compiler":
-      - "Overview": GUID-995D69CF-ACC7-4CB0-9635-4434A765470E.md
-      - "Getting Started": Chunk1390323175.md
-      - "Technical Support": Chunk1803945671.md
-      - "Quick Start Tutorial": Chunk921617846.md 
+# Remove the entire nav section to allow automatic navigation from index.md
 markdown_extensions:
   - admonition
   - pymdownx.details
