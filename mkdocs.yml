@@ -1,5 +1,5 @@
 site_name: Libero SoC Design Suite Unified Help
-docs_dir: .
+docs_dir: docs
 theme:
   name: material
   features:
