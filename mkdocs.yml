@@ -1,4 +1,5 @@
-site_name: Microchip FPGA Documentation Portal
+site_name: Libero SoC Design Suite Unified Help
+nav_depth: 1
 docs_dir: docs
 theme:
   name: material
@@ -22,7 +23,7 @@ theme:
   features:
     - navigation.sections
     - navigation.top
-    - navigation.expand
+    # - navigation.expand   # Collapsed by default now
     - toc.integrate
     - search.suggest
     - search.highlight
@@ -34,9 +35,9 @@ theme:
 extra:
   announcement:
     type: info
-    text: "Welcome to the Microchip FPGA Documentation Portal."
+    text: "Welcome to the Libero Documentation Portal."
   footer:
-    copyright: "© 2025 Microchip FPGA Documentation Portal. All rights reserved."
+    copyright: "© 2024 Libero Documentation Portal. All rights reserved."
   extra_css:
     - assets/custom-tiles.css
 plugins:
