@@ -11,22 +11,6 @@
     background-color: #333; /* Dark grey for dark mode */
 }
 
-/* Ensure primary navigation (left sidebar) is fully visible and sticky */
-.md-sidebar--primary {
-    width: 260px;
-    position: sticky;
-    top: 1rem;
-    height: calc(100vh - 2rem);
-    overflow-y: auto;
-    background-color: var(--md-default-bg-color);
-}
-
-/* Force all nested navigation items to be visible */
-.md-nav--primary .md-nav__item--nested > .md-nav {
-    display: block !important;
-}
-
-/* Style TOC (secondary sidebar) on the right */
 .md-sidebar--secondary {
     order: 2;
     width: 300px;
