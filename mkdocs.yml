@@ -1,5 +1,19 @@
 site_name: Libero SoC Design Suite Unified Help
-nav_depth: 1
+nav:
+  - Home: index.md
+  - Hardware:
+      - Hardware Documentation: Hardware/index.md
+      - Application Notes: Hardware/Application Notes/index.md
+      - Silicon User Guides: Hardware/Silicon User Guides/index.md
+      - Whitepapers: Hardware/Whitepapers/index.md
+  - Software:
+      - Software Documentation: Software/index.md
+      - Release Notes: Software/Release Notes/index.md
+      - User Guides: Software/User Guides/index.md
+  - IP:
+      - IP Documentation: IP/index.md
+      - IP User Guides: IP/IP User Guides/index.md
+      - Reference Guides: IP/Reference Guides/index.md
 docs_dir: docs
 theme:
   name: material
