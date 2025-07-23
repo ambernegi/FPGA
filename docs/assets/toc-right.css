@@ -22,12 +22,7 @@
     background-color: var(--md-default-bg-color);
 }
 
-/* Adjust main content to fit between left nav and right TOC */
-.md-content {
-    max-width: calc(100% - 570px);
-    margin-left: 270px;
-    margin-right: 310px;
-}
+
 
 /* Ensure TOC is visible even if empty */
 .md-sidebar--secondary .md-nav {
