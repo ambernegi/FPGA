@@ -2,7 +2,7 @@
 .md-typeset .cards > ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem; /* Reduced from 2rem to 1rem for tighter spacing */
   justify-content: center;
   padding: 0;
 }
@@ -29,4 +29,4 @@
   font-weight: 600;
   text-decoration: none;
   display: block;
-} 
+}
