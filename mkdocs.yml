@@ -2,8 +2,8 @@ site_name: FPGA Documentation Portal
 nav:
   - Home: index.md
   - Hardware: 
-      - Hardware Documentation: Hardware/index.md
-      - Application Notes: Hardware/Application Notes/index.md
+      - Hardware Documentation: Hardware/index.html
+      - Application Notes: Hardware/Application Notes/index.html
       - Silicon User Guides: Hardware/Silicon User Guides/index.md
       - Whitepapers: Hardware/Whitepapers/index.md
   - Software:
