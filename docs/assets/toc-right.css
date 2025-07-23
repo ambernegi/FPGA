@@ -23,12 +23,6 @@
 }
 
 
-
-/* Ensure TOC is visible even if empty */
-.md-sidebar--secondary .md-nav {
-    min-height: 100px;
-}
-
 /* Responsive design: hide TOC and adjust content on smaller screens */
 @media screen and (max-width: 76.1875em) {
     .md-sidebar--secondary {
@@ -60,8 +54,3 @@
     border-left: 2px solid #ddd;
 }
 
-/* Ensure no theme overrides interfere */
-.md-main__inner {
-    display: flex;
-    flex-wrap: nowrap;
-}
