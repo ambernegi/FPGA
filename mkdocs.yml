@@ -66,10 +66,9 @@ plugins:
   - search:
       lang: en
       separator: '[\s\-_]+'
-  - minify:
-      minify_html: true
-      minify_css: true
-      minify_js: true
+  - awesome-pages:
+      filename: .pages
+      collapse_single_pages: true
 
 markdown_extensions:
   - admonition
