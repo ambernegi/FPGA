@@ -1,19 +1,19 @@
 site_name: FPGA Documentation Portal
 nav:
   - Home: index.md
-  - Hardware: 
-      - Hardware Documentation: hardware/index.html
-      - Application Notes: hardware/Application Notes/index.html
-      - Silicon User Guides: hardware/Silicon User Guides/index.html
-      - Whitepapers: hardware/Whitepapers/index.html
+  - Hardware:
+      - Hardware Documentation: Hardware/index.md
+      - Application Notes: Hardware/ApplicationNotes/index.md
+      - Silicon User Guides: Hardware/SiliconUserGuides/index.md
+      - Whitepapers: Hardware/Whitepapers/index.md
   - Software:
-      - Software Documentation: software/index.html
-      - Release Notes: software/Release Notes/index.html
-      - User Guides: software/User Guides/index.html
-  - IP: 
-      - IP Documentation: ip/index.html
-      - IP User Guides: ip/IP User Guides/index.html
-      - Reference Guides: ip/Reference Guides/index.html
+      - Software Documentation: Software/index.md
+      - Release Notes: Software/ReleaseNotes/index.md
+      - User Guides: Software/UserGuides/index.md
+  - IP:
+      - IP Documentation: IP/index.md
+      - IP User Guides: IP/IPUserGuides/index.md
+      - Reference Guides: IP/ReferenceGuides/index.md
 docs_dir: docs
 theme:
   name: material
