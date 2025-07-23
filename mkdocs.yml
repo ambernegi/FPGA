@@ -1,4 +1,4 @@
-site_name: Libero SoC Design Suite Unified Help
+site_name: FPGA Documentation Portal
 nav:
   - Home: index.md
   - Hardware:
@@ -49,9 +49,9 @@ theme:
 extra:
   announcement:
     type: info
-    text: "Welcome to the Libero Documentation Portal."
+    text: "Welcome to the Microchip FPGA Documentation Portal."
   footer:
-    copyright: "© 2024 Libero Documentation Portal. All rights reserved."
+    copyright: "© 2025 Microchip FPGA Documentation Portal. All rights reserved."
   extra_css:
     - assets/custom-tiles.css
 plugins:
