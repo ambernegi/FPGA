@@ -1,0 +1,31 @@
+/* Ensure main navigation stays on the left */
+   .md-nav--primary {
+       width: 100%;
+       position: sticky;
+       top: 0;
+   }
+
+   /* Style TOC to appear on the right side */
+   .md-sidebar--secondary {
+       order: 2;
+       width: 300px;
+       max-width: 25%;
+       position: sticky;
+       top: 1rem;
+   }
+
+   /* Adjust main content to accommodate right-side TOC */
+   .md-content {
+       max-width: 70%;
+       margin-right: 310px;
+   }
+
+   @media screen and (max-width: 76.1875em) {
+       .md-sidebar--secondary {
+           display: none; /* Hide TOC on smaller screens */
+       }
+       .md-content {
+           max-width: 100%;
+           margin-right: 0;
+       }
+   }
