@@ -18,6 +18,7 @@ docs_dir: docs
 theme:
   name: material
   logo: assets/microchip.png
+  favicon: assets/microchip.png
   palette:
     - scheme: default
       primary: black
@@ -35,31 +36,67 @@ theme:
     text: Inter
     code: JetBrains Mono
   features:
-    - navigation.sections
-    - navigation.top
-    # - navigation.expand   # Collapsed by default now
-    - toc.integrate
-    - search.suggest
-    - search.highlight
-    - content.code.copy
-    - content.action.edit
-    - content.tabs.link
-    - header.autohide
-    - announce.dismiss
+    - navigation.sections      # Group pages under sections (Hardware, Software, IP)
+    - navigation.top           # Show back-to-top button
+    - navigation.instant       # Load pages instantly via AJAX
+    - navigation.tracking      # Highlight active section in navigation
+    - navigation.indexes       # Allow index pages for sections
+    - content.code.copy        # Add copy button for code blocks
+    - content.code.annotate    # Enable annotations in code blocks
+    - content.action.edit      # Add edit button linking to GitHub
+    - content.tabs             # Support tabbed content
+    - content.tabs.link        # Link tabs across pages
+    - header.autohide         # Hide header on scroll
+    - announce.dismiss         # Allow dismissing announcement
+    - toc.follow              # Make TOC follow scroll on right side
+
 extra:
   announcement:
     type: info
     text: "Welcome to the Microchip FPGA Documentation Portal."
-  footer:
-    copyright: "© 2025 Microchip FPGA Documentation Portal. All rights reserved."
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/<your-username>/<your-repo>  # Replace with your repo URL
+  generator: false  # Hide "Made with MkDocs" in footer
   extra_css:
     - assets/custom-tiles.css
+    - assets/toc-right.css  # Custom CSS for right-side TOC
+
 plugins:
-  - search
+  - search:
+      lang: en
+      separator: '[\s\-_]+'  # Improved search tokenization
+  - awesome-pages:  # Organize pages automatically within sections
+      filename: .pages
+      collapse_single_pages: true
+  - minify:  # Minify HTML, CSS, JS for faster loading
+      minify_html: true
+      minify_css: true
+      minify_js: true
+
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true  # Add permalinks to TOC items
+      toc_depth: 3     # Limit TOC depth to avoid clutter
+
+use_directory_urls: true  # Use clean URLs (e.g., /Hardware/ instead of /Hardware/index.html)
+
+extra_javascript:
+  - assets/toc-right.js  # Custom JS for TOC behavior
   - attr_list
   - md_in_html 
 use_directory_urls: false 
