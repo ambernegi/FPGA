@@ -2,6 +2,7 @@ site_name: Microchip FPGA Documentation Portal
 docs_dir: docs
 theme:
   name: material
+  logo: assets/microchip.png
   palette:
     - scheme: default
       primary: black
