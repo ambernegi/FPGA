@@ -1,56 +1,69 @@
+/* Style the logo area to ensure visibility */
+.md-logo {
+    background-color: white; /* White background for light mode */
+    padding: 0.5rem; /* Padding to create a distinct area */
+    border-radius: 4px; /* Rounded corners for aesthetics */
+    margin: 0.5rem; /* Space around logo */
+}
+
+/* Adjust logo for dark mode */
+[data-md-color-scheme="slate"] .md-logo {
+    background-color: #333; /* Dark grey for dark mode */
+}
+
 /* Ensure primary navigation (left sidebar) is fully visible and sticky */
 .md-sidebar--primary {
-    width: 260px; /* Fixed width for consistency */
-    position: sticky;
-    top: 1rem;
-    height: calc(100vh - 2rem); /* Full viewport height minus padding */
-    overflow-y: auto; /* Scroll if content overflows */
-    background-color: var(--md-default-bg-color); /* Match theme background */
-}
-
-/* Force all nested navigation items to be visible */
-.md-nav--primary .md-nav__item--nested > .md-nav {
-    display: block !important; /* Ensure nested items (e.g., Hardware, Software) are expanded */
-}
-
-/* Style TOC (secondary sidebar) on the right */
-.md-sidebar--secondary {
-    order: 2; /* Place after content */
-    width: 300px; /* Fixed width for TOC */
-    max-width: 25%; /* Responsive max width */
+    width: 260px;
     position: sticky;
     top: 1rem;
     height: calc(100vh - 2rem);
     overflow-y: auto;
-    background-color: var(--md-default-bg-color); /* Match theme background */
+    background-color: var(--md-default-bg-color);
+}
+
+/* Force all nested navigation items to be visible */
+.md-nav--primary .md-nav__item--nested > .md-nav {
+    display: block !important;
+}
+
+/* Style TOC (secondary sidebar) on the right */
+.md-sidebar--secondary {
+    order: 2;
+    width: 300px;
+    max-width: 25%;
+    position: sticky;
+    top: 1rem;
+    height: calc(100vh - 2rem);
+    overflow-y: auto;
+    background-color: var(--md-default-bg-color);
 }
 
 /* Adjust main content to fit between left nav and right TOC */
 .md-content {
-    max-width: calc(100% - 570px); /* Account for left nav (260px) and right TOC (300px) + margins */
-    margin-left: 270px; /* Space for left sidebar */
-    margin-right: 310px; /* Space for right TOC */
+    max-width: calc(100% - 570px);
+    margin-left: 270px;
+    margin-right: 310px;
 }
 
-/* Ensure TOC is visible even if empty (for debugging) */
+/* Ensure TOC is visible even if empty */
 .md-sidebar--secondary .md-nav {
-    min-height: 100px; /* Prevent collapse if no TOC */
+    min-height: 100px;
 }
 
 /* Responsive design: hide TOC and adjust content on smaller screens */
 @media screen and (max-width: 76.1875em) {
     .md-sidebar--secondary {
-        display: none; /* Hide TOC on smaller screens */
+        display: none;
     }
     .md-content {
-        max-width: calc(100% - 270px); /* Only account for left sidebar */
+        max-width: calc(100% - 270px);
         margin-right: 0;
     }
 }
 
 @media screen and (max-width: 48em) {
     .md-sidebar--primary {
-        width: 100%; /* Full width on mobile */
+        width: 100%;
         position: relative;
         height: auto;
     }
@@ -62,10 +75,10 @@
 
 /* Debugging: Highlight navigation and TOC */
 .md-sidebar--primary {
-    border-right: 2px solid #ddd; /* Debug: Visible border */
+    border-right: 2px solid #ddd;
 }
 .md-sidebar--secondary {
-    border-left: 2px solid #ddd; /* Debug: Visible border */
+    border-left: 2px solid #ddd;
 }
 
 /* Ensure no theme overrides interfere */
