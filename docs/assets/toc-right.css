@@ -1,31 +1,75 @@
-/* Ensure main navigation stays on the left */
-   .md-nav--primary {
-       width: 100%;
-       position: sticky;
-       top: 0;
-   }
+/* Ensure primary navigation (left sidebar) is fully visible and sticky */
+.md-sidebar--primary {
+    width: 260px; /* Fixed width for consistency */
+    position: sticky;
+    top: 1rem;
+    height: calc(100vh - 2rem); /* Full viewport height minus padding */
+    overflow-y: auto; /* Scroll if content overflows */
+    background-color: var(--md-default-bg-color); /* Match theme background */
+}
 
-   /* Style TOC to appear on the right side */
-   .md-sidebar--secondary {
-       order: 2;
-       width: 300px;
-       max-width: 25%;
-       position: sticky;
-       top: 1rem;
-   }
+/* Force all nested navigation items to be visible */
+.md-nav--primary .md-nav__item--nested > .md-nav {
+    display: block !important; /* Ensure nested items (e.g., Hardware, Software) are expanded */
+}
 
-   /* Adjust main content to accommodate right-side TOC */
-   .md-content {
-       max-width: 70%;
-       margin-right: 310px;
-   }
+/* Style TOC (secondary sidebar) on the right */
+.md-sidebar--secondary {
+    order: 2; /* Place after content */
+    width: 300px; /* Fixed width for TOC */
+    max-width: 25%; /* Responsive max width */
+    position: sticky;
+    top: 1rem;
+    height: calc(100vh - 2rem);
+    overflow-y: auto;
+    background-color: var(--md-default-bg-color); /* Match theme background */
+}
 
-   @media screen and (max-width: 76.1875em) {
-       .md-sidebar--secondary {
-           display: none; /* Hide TOC on smaller screens */
-       }
-       .md-content {
-           max-width: 100%;
-           margin-right: 0;
-       }
-   }
+/* Adjust main content to fit between left nav and right TOC */
+.md-content {
+    max-width: calc(100% - 570px); /* Account for left nav (260px) and right TOC (300px) + margins */
+    margin-left: 270px; /* Space for left sidebar */
+    margin-right: 310px; /* Space for right TOC */
+}
+
+/* Ensure TOC is visible even if empty (for debugging) */
+.md-sidebar--secondary .md-nav {
+    min-height: 100px; /* Prevent collapse if no TOC */
+}
+
+/* Responsive design: hide TOC and adjust content on smaller screens */
+@media screen and (max-width: 76.1875em) {
+    .md-sidebar--secondary {
+        display: none; /* Hide TOC on smaller screens */
+    }
+    .md-content {
+        max-width: calc(100% - 270px); /* Only account for left sidebar */
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 48em) {
+    .md-sidebar--primary {
+        width: 100%; /* Full width on mobile */
+        position: relative;
+        height: auto;
+    }
+    .md-content {
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Debugging: Highlight navigation and TOC */
+.md-sidebar--primary {
+    border-right: 2px solid #ddd; /* Debug: Visible border */
+}
+.md-sidebar--secondary {
+    border-left: 2px solid #ddd; /* Debug: Visible border */
+}
+
+/* Ensure no theme overrides interfere */
+.md-main__inner {
+    display: flex;
+    flex-wrap: nowrap;
+}
