@@ -36,19 +36,19 @@ theme:
     text: Inter
     code: JetBrains Mono
   features:
-    - navigation.sections      # Group pages under sections (Hardware, Software, IP)
-    - navigation.top           # Show back-to-top button
-    - navigation.instant       # Load pages instantly via AJAX
-    - navigation.tracking      # Highlight active section in navigation
-    - navigation.indexes       # Allow index pages for sections
-    - content.code.copy        # Add copy button for code blocks
-    - content.code.annotate    # Enable annotations in code blocks
-    - content.action.edit      # Add edit button linking to GitHub
-    - content.tabs             # Support tabbed content
-    - content.tabs.link        # Link tabs across pages
-    - header.autohide         # Hide header on scroll
-    - announce.dismiss         # Allow dismissing announcement
-    - toc.follow              # Make TOC follow scroll on right side
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - content.tabs
+    - content.tabs.link
+    - header.autohide
+    - announce.dismiss
+    - toc.follow
 
 extra:
   announcement:
@@ -56,20 +56,20 @@ extra:
     text: "Welcome to the Microchip FPGA Documentation Portal."
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/<your-username>/<your-repo>  # Replace with your repo URL
-  generator: false  # Hide "Made with MkDocs" in footer
+      link: https://github.com/<your-username>/<your-repo>
+  generator: false
   extra_css:
     - assets/custom-tiles.css
-    - assets/toc-right.css  # Custom CSS for right-side TOC
+    - assets/toc-right.css
 
 plugins:
   - search:
       lang: en
-      separator: '[\s\-_]+'  # Improved search tokenization
-  - awesome-pages:  # Organize pages automatically within sections
+      separator: '[\s\-_]+'
+  - awesome-pages:
       filename: .pages
       collapse_single_pages: true
-  - minify:  # Minify HTML, CSS, JS for faster loading
+  - minify:
       minify_html: true
       minify_css: true
       minify_js: true
@@ -90,10 +90,10 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - toc:
-      permalink: true  # Add permalinks to TOC items
-      toc_depth: 3     # Limit TOC depth to avoid clutter
+      permalink: true
+      toc_depth: 3
 
-use_directory_urls: true  # Use clean URLs (e.g., /Hardware/ instead of /Hardware/index.html)
+use_directory_urls: true
 
 extra_javascript:
-  - assets/toc-right.js  # Custom JS for TOC behavior
+  - assets/toc-right.js
