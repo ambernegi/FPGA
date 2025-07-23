@@ -10,8 +10,8 @@ nav:
       - Software Documentation: Software/index.md
       - Release Notes: Software/Release Notes/index.md
       - User Guides: Software/User Guides/index.md
-  - IP: IP/index.md
-      - IP Documentation:
+  - IP: 
+      - IP Documentation: IP/index.md
       - IP User Guides: IP/IP User Guides/index.md
       - Reference Guides: IP/Reference Guides/index.md
 docs_dir: docs
